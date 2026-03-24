@@ -33,6 +33,7 @@ export default function EncountersClient({ labels }: { labels: Labels }) {
   if (loading) {
     return (
       <p role="status" aria-live="polite" className="px-4 py-8 text-gray-500">
+      <p role="status" aria-live="polite" style={{ padding: "2rem" }}>
         {labels.loading}
       </p>
     );
@@ -71,6 +72,15 @@ export default function EncountersClient({ labels }: { labels: Labels }) {
     <main style={{ padding: "2rem", fontFamily: "sans-serif" }}>
       <h1>{labels.title}</h1>
       {encounters.length === 0 ? (
+        <p role="status">{labels.empty}</p>
+      ) : (
+        <ul aria-label={labels.title}>
+          {encounters.map((e) => (
+            <li key={e.id} style={{ margin: "10px 0", padding: "10px", border: "1px solid #ddd" }}>
+              <span><strong>{labels.id}:</strong> {e.id}</span>{" | "}
+              <span><strong>{labels.patient}:</strong> {e.patientId}</span>{" | "}
+              <span><strong>{labels.date}:</strong> {e.date}</span>{" | "}
+              <span>{labels.notes}: {e.notes}</span>
         <p>{labels.empty}</p>
       ) : (
         <ul>

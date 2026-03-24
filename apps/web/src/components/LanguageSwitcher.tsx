@@ -20,6 +20,11 @@ export default function LanguageSwitcher({ current }: { current: Locale }) {
 
   return (
     <div role="group" aria-label="Language selection" className="flex gap-2 items-center">
+    <div
+      role="group"
+      aria-label="Language selection"
+      style={{ display: "flex", gap: "0.5rem", alignItems: "center" }}
+    >
       {locales.map((locale) => {
         const isCurrent = locale === current;
         return (
@@ -34,6 +39,14 @@ export default function LanguageSwitcher({ current }: { current: Locale }) {
                 ? "bg-gray-200 border-gray-300 font-semibold cursor-default"
                 : "bg-white border-gray-300 hover:bg-gray-50 cursor-pointer"
             }`}
+            style={{
+              padding: "4px 10px",
+              cursor: isCurrent ? "default" : "pointer",
+              fontWeight: isCurrent ? "bold" : "normal",
+              border: "1px solid #ccc",
+              borderRadius: "4px",
+              background: isCurrent ? "#e0e0e0" : "white",
+            }}
           >
             {labels[locale]}
           </button>

@@ -34,6 +34,9 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       <body>
         <NextIntlClientProvider locale={locale} messages={messages}>
           <Navbar />
+          <div id="main-content" tabIndex={-1}>
+            {children}
+          </div>
           {children}
         </NextIntlClientProvider>
     <html lang="en">

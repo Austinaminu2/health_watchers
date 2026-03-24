@@ -31,6 +31,7 @@ export default function PatientsClient({ labels }: { labels: Labels }) {
   if (loading) {
     return (
       <p role="status" aria-live="polite" className="px-4 py-8 text-gray-500">
+      <p role="status" aria-live="polite" style={{ padding: "2rem" }}>
         {labels.loading}
       </p>
     );
@@ -84,6 +85,17 @@ export default function PatientsClient({ labels }: { labels: Labels }) {
     <main style={{ padding: "2rem", fontFamily: "sans-serif" }}>
       <h1>{labels.title}</h1>
       {patients.length === 0 ? (
+        <p role="status">{labels.empty}</p>
+      ) : (
+        <table
+          aria-label={labels.title}
+          style={{ width: "100%", borderCollapse: "collapse" }}
+        >
+          <thead>
+            <tr>
+              <th scope="col" style={{ border: "1px solid #ddd", padding: "8px" }}>{labels.id}</th>
+              <th scope="col" style={{ border: "1px solid #ddd", padding: "8px" }}>{labels.name}</th>
+              <th scope="col" style={{ border: "1px solid #ddd", padding: "8px" }}>{labels.dob}</th>
         <p>{labels.empty}</p>
       ) : (
         <table style={{ width: "100%", borderCollapse: "collapse" }}>

@@ -34,6 +34,8 @@
     "eslint-plugin-jsx-a11y": "^6.10.2",
     "postcss": "^8.5.8",
     "tailwindcss": "^4.2.2",
+    "eslint": "^9.39.4",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
     "typescript": "latest"
     "typescript": "6.0.2"
   }
