@@ -46,6 +46,25 @@ export default function LanguageSwitcher({ current }: { current: Locale }) {
           </button>
         );
       })}
+    <div style={{ display: "flex", gap: "0.5rem", alignItems: "center" }}>
+      {locales.map((locale) => (
+        <button
+          key={locale}
+          onClick={() => switchLocale(locale)}
+          disabled={locale === current || isPending}
+          style={{
+            padding: "4px 10px",
+            cursor: locale === current ? "default" : "pointer",
+            fontWeight: locale === current ? "bold" : "normal",
+            border: "1px solid #ccc",
+            borderRadius: "4px",
+            background: locale === current ? "#e0e0e0" : "white",
+          }}
+          aria-current={locale === current ? "true" : undefined}
+        >
+          {labels[locale]}
+        </button>
+      ))}
     </div>
   );
 }

@@ -39,6 +39,7 @@ export default function PaymentsClient({ labels }: { labels: Labels }) {
       </p>
     );
   }
+  if (loading) return <p style={{ padding: "2rem" }}>{labels.loading}</p>;
 
   return (
     <main style={{ padding: "2rem", fontFamily: "sans-serif" }}>
@@ -56,6 +57,17 @@ export default function PaymentsClient({ labels }: { labels: Labels }) {
               {p.txHash && (
                 <span>
                   {" | "}
+        <p>{labels.empty}</p>
+      ) : (
+        <ul>
+          {payments.map((p) => (
+            <li key={p.id} style={{ margin: "10px 0", padding: "10px", border: "1px solid #ddd" }}>
+              <strong>{labels.id}:</strong> {p.id} | <strong>{labels.patient}:</strong> {p.patientId} |{" "}
+              {labels.amount}: {p.amount} XLM | {labels.status}: {p.status}
+              {p.txHash && (
+                <span>
+                  {" "}
+                  |{" "}
                   <a
                     href={`https://stellar.expert/explorer/testnet/tx/${p.txHash}`}
                     target="_blank"

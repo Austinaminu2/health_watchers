@@ -37,6 +37,7 @@ export default function EncountersClient({ labels }: { labels: Labels }) {
       </p>
     );
   }
+  if (loading) return <p style={{ padding: "2rem" }}>{labels.loading}</p>;
 
   return (
     <main style={{ padding: "2rem", fontFamily: "sans-serif" }}>
@@ -51,6 +52,13 @@ export default function EncountersClient({ labels }: { labels: Labels }) {
               <span><strong>{labels.patient}:</strong> {e.patientId}</span>{" | "}
               <span><strong>{labels.date}:</strong> {e.date}</span>{" | "}
               <span>{labels.notes}: {e.notes}</span>
+        <p>{labels.empty}</p>
+      ) : (
+        <ul>
+          {encounters.map((e) => (
+            <li key={e.id} style={{ margin: "10px 0", padding: "10px", border: "1px solid #ddd" }}>
+              <strong>{labels.id}:</strong> {e.id} | <strong>{labels.patient}:</strong> {e.patientId} |{" "}
+              <strong>{labels.date}:</strong> {e.date} | {labels.notes}: {e.notes}
             </li>
           ))}
         </ul>

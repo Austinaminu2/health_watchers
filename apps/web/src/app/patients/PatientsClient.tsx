@@ -35,6 +35,7 @@ export default function PatientsClient({ labels }: { labels: Labels }) {
       </p>
     );
   }
+  if (loading) return <p style={{ padding: "2rem" }}>{labels.loading}</p>;
 
   return (
     <main style={{ padding: "2rem", fontFamily: "sans-serif" }}>
@@ -51,6 +52,14 @@ export default function PatientsClient({ labels }: { labels: Labels }) {
               <th scope="col" style={{ border: "1px solid #ddd", padding: "8px" }}>{labels.id}</th>
               <th scope="col" style={{ border: "1px solid #ddd", padding: "8px" }}>{labels.name}</th>
               <th scope="col" style={{ border: "1px solid #ddd", padding: "8px" }}>{labels.dob}</th>
+        <p>{labels.empty}</p>
+      ) : (
+        <table style={{ width: "100%", borderCollapse: "collapse" }}>
+          <thead>
+            <tr>
+              {[labels.id, labels.name, labels.dob].map((h) => (
+                <th key={h} style={{ border: "1px solid #ddd", padding: "8px" }}>{h}</th>
+              ))}
             </tr>
           </thead>
           <tbody>

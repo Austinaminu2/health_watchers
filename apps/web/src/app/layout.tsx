@@ -25,6 +25,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           <div id="main-content" tabIndex={-1}>
             {children}
           </div>
+          {children}
         </NextIntlClientProvider>
     <html lang="en">
       <body className="min-h-screen bg-neutral-50 font-sans antialiased">

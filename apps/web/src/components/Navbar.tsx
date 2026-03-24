@@ -55,5 +55,22 @@ export default function Navbar() {
         <LanguageSwitcher current={locale} />
       </nav>
     </>
+    <nav
+      style={{
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "space-between",
+        padding: "0.75rem 2rem",
+        borderBottom: "1px solid #ddd",
+        fontFamily: "sans-serif",
+      }}
+    >
+      <div style={{ display: "flex", gap: "1.5rem" }}>
+        <a href="/patients">{t("patients")}</a>
+        <a href="/encounters">{t("encounters")}</a>
+        <a href="/payments">{t("payments")}</a>
+      </div>
+      <LanguageSwitcher current={locale} />
+    </nav>
   );
 }
