@@ -21,6 +21,6 @@
     "@types/jsonwebtoken": "^9.0.0",
     "@types/bcryptjs": "^2.4.6",
     "ts-node-dev": "^2.0.0",
-    "typescript": "latest"
+    "typescript": "6.0.2"
   }
 }

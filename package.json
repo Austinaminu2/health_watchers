@@ -10,8 +10,8 @@
     "lint":  "turbo run lint"
   },
   "devDependencies": {
-    "turbo": "latest",
-    "typescript": "latest",
-    "@types/node": "latest"
+    "turbo": "2.8.20",
+    "typescript": "6.0.2",
+    "@types/node": "25.5.0"
   }
 }

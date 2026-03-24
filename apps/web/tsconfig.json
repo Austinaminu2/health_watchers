@@ -9,8 +9,11 @@
     ],
     "module": "esnext",
     "moduleResolution": "bundler",
-    "rootDir": "./src",
+    "rootDir": ".",
     "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    },
     "allowJs": true,
     "noEmit": true,
     "incremental": true,
