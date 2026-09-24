@@ -176,6 +176,26 @@ const navItems: NavItem[] = [
     ),
   },
   {
+    label: 'Medications',
+    href: '/medications',
+    icon: (
+      <svg
+        className="h-5 w-5"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={2}
+          d="M9 3H5a2 2 0 00-2 2v14a2 2 0 002 2h4m0-18h10a2 2 0 012 2v14a2 2 0 01-2 2H9m0-18v18M13 8h4m-4 4h4m-4 4h4"
+        />
+      </svg>
+    ),
+  },
+  {
     label: 'Settings',
     href: '/settings',
     icon: (
