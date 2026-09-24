@@ -89,6 +89,10 @@ stryker-report/
 apps/api/reports/
 apps/api/stryker-reports/
 
+# Generated performance & quality pipeline reports
+performance/reports/
+scripts/quality/reports/
+
 # Pact contract test artifacts
 pacts/*.json
 

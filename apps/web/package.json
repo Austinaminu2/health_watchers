@@ -9,6 +9,7 @@
     "start": "next start",
     "lint": "next lint",
     "test": "jest --passWithNoTests",
+    "test:coverage": "jest --coverage --passWithNoTests",
     "test:run": "jest --passWithNoTests --forceExit",
     "test:e2e": "playwright test",
     "test:e2e:ui": "playwright test --ui",
