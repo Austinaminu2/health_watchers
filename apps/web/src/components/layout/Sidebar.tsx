@@ -75,6 +75,26 @@ const navItems: NavItem[] = [
     ),
   },
   {
+    label: 'Lab Results',
+    href: '/lab-results',
+    icon: (
+      <svg
+        className="h-5 w-5"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={2}
+          d="M9 3v6.5L4.2 18a2 2 0 001.7 3h12.2a2 2 0 001.7-3L15 9.5V3M8 3h8m-5 9h2"
+        />
+      </svg>
+    ),
+  },
+  {
     label: 'Payments',
     href: '/payments',
     icon: (
